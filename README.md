@@ -7,7 +7,7 @@ miaoshu
 You'll first need to install [ESLint](https://eslint.org/):
 
 ```sh
-npm i eslint --save-dev
+npm i eslint-plugin-input-rule --save-dev
 ```
 
 Next, install `eslint-plugin-input-rule`:
@@ -22,8 +22,9 @@ Add `test` to the plugins section of your `.eslintrc` configuration file. You ca
 
 ```json
 {
+    "extends":["plugin:eslint-plugin-input-rule/recommended"],
     "plugins": [
-        "test"
+        "input-rule"
     ]
 }
 ```
@@ -31,13 +32,13 @@ Add `test` to the plugins section of your `.eslintrc` configuration file. You ca
 
 Then configure the rules you want to use under the rules section.
 
-```json
+<!-- ```json
 {
     "rules": {
         "test/rule-name": 2
     }
 }
-```
+``` -->
 
 ## Supported Rules
 
