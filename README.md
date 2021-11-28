@@ -10,7 +10,7 @@
 yarn eslint-plugin-input-rule
 ```
 
-## Usage
+## 使用方法
 
 Add `input-rule` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
