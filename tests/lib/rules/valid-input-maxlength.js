@@ -29,7 +29,7 @@ const tester = new RuleTester({
 //       code: `<template>
 //                 <div>
 //                   <div v-if="foo">
-//                     <s-input/>
+//                     <s-input maxlength="100"/>
 //                   </div>
 //                 </div>
 //             </template>`
@@ -42,7 +42,7 @@ const tester = new RuleTester({
 //       code: `<template>
 //                 <div>
 //                   <div v-if="foo">
-//                     <s-input/>
+//                     <s-input maxlength="100"/>
 //                   </div>
 //                 </div>
 //             </template>`,
