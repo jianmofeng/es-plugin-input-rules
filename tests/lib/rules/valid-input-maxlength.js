@@ -20,38 +20,67 @@ const tester = new RuleTester({
   parser: require.resolve('vue-eslint-parser'),
   parserOptions: { ecmaVersion: 2015 }
 })
+return
 // console.log(`(╯‵□′)╯︵┻━┻`, require.resolve('vue-eslint-parser'))
 // console.log(`(╯‵□′)╯︵┻━┻`, rule)
-// tester.run('valid-input-maxlength', rule, {
-//   valid: [
-//     {
-//       filename: 'test.vue',
-//       code: `<template>
-//                 <div>
-//                   <div v-if="foo">
-//                     <s-input maxlength="100"/>
-//                   </div>
-//                 </div>
-//             </template>`
-//     },
+tester.run('valid-input-maxlength', rule, {
+  valid: [
+    {
+      filename: 'test.vue',
+      code: `<template>
+                <div>
+                  <div v-if="foo">
+                    <s-input maxlength="100"/>
+                  </div>
+                </div>
+            </template>`
+    },
+    {
+      filename: 'test.vue',
+      code: `<template>
+                <div>
+                  <div v-if="foo">
+                    <s-input m="100" :maxlength="111"/>
+                  </div>
+                </div>
+            </template>`,
+    },
     
-//   ],
-//   invalid: [
-//     {
-//       filename: 'test.vue',
-//       code: `<template>
-//                 <div>
-//                   <div v-if="foo">
-//                     <s-input maxlength="100"/>
-//                   </div>
-//                 </div>
-//             </template>`,
-//       errors: ["maxlength需要有"]
-//     },
-//     // {
-//     //   filename: 'test.vue',
-//     //   code: '<template><div><div v-if="foo"><s-input :value="22"/><template><s-input placeholder="11" :maxlength="100"/></template></div><div v-else></div></div></template>',
-//     //   errors: ["maxlength需要有"]
-//     // }
-//   ]
-// })
+  ],
+  invalid: [
+    {
+      filename: 'test.vue',
+      code: `<template>
+                <div>
+                  <div v-if="foo">
+                    <s-input m="100" :maxlength=""/>
+                  </div>
+                </div>
+            </template>`,
+      errors: ["maxlength需要有"]
+    },
+    
+    {
+      filename: 'test.vue',
+      code: `<template>
+                <div>
+                  <div v-if="foo">
+                    <s-input m="100"/>
+                  </div>
+                </div>
+            </template>`,
+      errors: ["maxlength需要有"]
+    },
+    {
+      filename: 'test.vue',
+      code: `<template>
+                <div>
+                  <div v-if="foo">
+                    <s-input m="100" maxlength=""/>
+                  </div>
+                </div>
+            </template>`,
+      errors: ["maxlength需要有"]
+    },
+  ]
+})

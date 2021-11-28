@@ -21,27 +21,34 @@ const tester = new RuleTester({
   parserOptions: { ecmaVersion: 2015 }
 })
 
+// return false;
 tester.run('valid-input-placeholder', rule, {
   valid: [
-    // {
-    //   filename: 'test.vue',
-    //   code: '<template><div><div v-if="foo"><s-input placeholder="11" /></div></template>'
-    // },
-    // {
-    //   filename: 'test.vue',
-    //   code: '<template><div><div v-if="foo"><s-input :placeholder="11" /></div></template>'
-    // },
+    {
+      filename: 'test.vue',
+      code: '<template><div><div v-if="foo"><s-input placeholder="1"/></div></template>',
+    },
+    {
+      filename: 'test.vue',
+      code: '<template><div><div v-if="foo"><s-input :placeholder="1"/></div></template>',
+    },
   ],
   invalid: [
     {
       filename: 'test.vue',
-      code: '<template><div><div v-if="foo"><s-input placeholder/></div></template>',
+      code: '<template><div><div v-if="foo"><s-input/></div></template>',
       errors: ["placeholder需要有"]
     },
-    // {
-    //   filename: 'test.vue',
-    //   code: '<template><div><div v-if="foo"><s-input :placeholder="100" /></div></template>',
-    //   errors: ["placeholder需要有值"]
-    // },
+    {
+      filename: 'test.vue',
+      code: '<template><div><div v-if="foo"><s-input placeholder=""/></div></template>',
+      errors: ["placeholder需要有值"]
+    },
+    {
+      filename: 'test.vue',
+      code: '<template><div><div v-if="foo"><s-input :placeholder=""/></div></template>',
+      errors: ["v-placeholder需要有值"]
+    },
+    
   ]
 })
