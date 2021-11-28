@@ -21,7 +21,7 @@ const tester = new RuleTester({
   parserOptions: { ecmaVersion: 2015 }
 })
 
-// return false;
+return false;
 tester.run('valid-input-placeholder', rule, {
   valid: [
     {
