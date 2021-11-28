@@ -1,10 +1,10 @@
-# eslint-plugin-test
+# eslint-plugin-input-rule
 
-miaoshu
+这是一个规范input的插件
 
-## Installation
+## 安装
 
-You'll first need to install [ESLint](https://eslint.org/):
+首先需要安装该eslint插件 [Input-rule](https://www.npmjs.com/package/eslint-plugin-input-rule):
 
 ```sh
 npm i eslint-plugin-input-rule --save-dev
@@ -18,7 +18,7 @@ yarn eslint-plugin-input-rule
 
 ## Usage
 
-Add `test` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `input-rule` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
@@ -29,18 +29,17 @@ Add `test` to the plugins section of your `.eslintrc` configuration file. You ca
 }
 ```
 
+如果需要单独关闭，在下面rules中，将对应规则设置为false
 
-Then configure the rules you want to use under the rules section.
-
-<!-- ```json
+```json
 {
     "rules": {
-        "test/rule-name": 2
+        "input-rule/valid-s-input": false,
     }
 }
-``` -->
+```
 
-## Supported Rules
+## 支持规则
 
 * Fill in provided rules here
 
