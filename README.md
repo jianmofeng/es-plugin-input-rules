@@ -7,7 +7,7 @@
 首先需要安装该eslint插件 [Input-rule](https://www.npmjs.com/package/eslint-plugin-input-rule):
 
 ```sh
-yarn eslint-plugin-input-rule
+yarn add eslint-plugin-input-rule
 ```
 
 ## 使用方法
