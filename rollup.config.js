@@ -3,7 +3,7 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json';
 import typescript from 'rollup-plugin-typescript'
-import { terser } from "rollup-plugin-terser";
+// import { terser } from "rollup-plugin-terser";
 
 export default {
     input: 'lib/index.js',
@@ -19,13 +19,12 @@ export default {
         }),
         
         typescript(),
-        // babel({
-        //     exclude: 'node_modules/**',
-        //     runtimeHelpers: true,
-        //     externalHelpers: true
-        // }),
-        babel({ runtimeHelpers: true, externalHelpers: true, exclude: 'node_modules/**' }),
-        terser(),
+        babel({
+            exclude: 'node_modules/**',
+            runtimeHelpers: true,
+            externalHelpers: true
+        }),
+        // terser(),
         json({
             // 默认情况下将解析所有JSON文件,
             // 但您可以专门包含/排除文件
