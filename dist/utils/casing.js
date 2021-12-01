@@ -1,5 +1,3 @@
-"use strict";
-
 var assert = require('assert');
 
 var invalidChars = /[^a-zA-Z0-9:]+/g;

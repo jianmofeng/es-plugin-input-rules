@@ -4,6 +4,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json';
 import typescript from 'rollup-plugin-typescript'
 // import { terser } from "rollup-plugin-terser";
+import cleanup from 'rollup-plugin-cleanup';
 
 export default {
     input: 'lib/index.js',
@@ -17,7 +18,7 @@ export default {
         commonjs({
             include: /node_modules/
         }),
-        
+        cleanup(),
         typescript(),
         babel({
             exclude: 'node_modules/**',
